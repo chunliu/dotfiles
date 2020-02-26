@@ -4,12 +4,9 @@ uptimestr=$(uptime)
 
 if [ "$1" == "-l" ]
 then
-	agvload=${uptimestr##*average:}
-	echo $agvload
+	echo ${uptimestr##*average:}
 else
 	uptime1=${uptimestr##*up}
-	uptime2=${uptime1%%users*}
-	uptime3=${uptime2%,*}
-	echo $uptime3
+	echo ${uptime1%,*users*}
 fi
 
