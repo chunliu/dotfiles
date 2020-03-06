@@ -12,7 +12,7 @@ if [ -f ~/.tmux.conf ]; then
 	rm ~/.tmux.conf
 fi 
 echo "Create symbolic link for .tmux.conf"
-ehco ""
+echo ""
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 
 # Install oh-my-zsh
@@ -54,16 +54,6 @@ echo "Install colorls..."
 echo ""
 sudo gem install colorls
 
-if [ -f ~/.zshrc ]; then
-	echo "Remove existing .zshrc..."
-	echo ""
-	rm ~/.zshrc
-fi
-echo "Create symbolic link for .zshrc..."
-echo ""
-ln -s ~/.dotfiles/zshrc ~/.zshrc
-source ~/.zshrc
-
 # Configure vim
 echo "Configure vim..."
 echo ""
@@ -76,5 +66,17 @@ fi
 echo "Create symbolic link for .vimrc"
 echo ""
 ln -s ~/.dotfiles/vimrc ~/.vimrc
+
+
+
+if [ -f ~/.zshrc ]; then
+	echo "Remove existing .zshrc..."
+	echo ""
+	rm ~/.zshrc
+fi
+echo "Create symbolic link for .zshrc..."
+echo ""
+ln -s ~/.dotfiles/zshrc ~/.zshrc
+source ~/.zshrc
 
 echo "All configurations are done!!! Enjoy it!"

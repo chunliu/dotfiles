@@ -15,7 +15,10 @@ export GOPATH=$HOME/go
 # Maven
 export PATH=$PATH:/opt/apache-maven-3.6.3/bin
 
-source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
+if [ -f $HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh ]; then
+	source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
