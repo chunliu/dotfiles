@@ -3,7 +3,7 @@
 # Update the package list and install zsh, tmux and vim
 echo "Install necessary packages"
 sudo apt update
-sudo apt install zsh tmux vim build-essentia ruby ruby-dev ruby-colorize -y
+sudo apt install zsh tmux vim build-essential ruby ruby-dev ruby-colorize -y
 
 # Create symbolic link for .tmux.conf
 if [ -f ~/.tmux.conf ]; then
