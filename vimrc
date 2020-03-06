@@ -20,7 +20,7 @@ set autoindent
 set shiftwidth=4
 set hlsearch
 " If search string contains only lowercase letters search is case insensitive.
-" If search string contains capital letters search is case sensative
+" " If search string contains capital letters search is case sensative
 set ignorecase
 set smartcase
 
