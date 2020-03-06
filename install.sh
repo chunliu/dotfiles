@@ -22,7 +22,7 @@ if [ -d ~/.oh-my-zsh/ ] ; then
 else
 	echo "oh-my-zsh not found, now install oh-my-zsh..."
 	echo ""
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"  "" --unattended
 fi
 
 # Install oh-my-zsh plugin
@@ -77,5 +77,7 @@ echo "Create symbolic link for .zshrc..."
 echo ""
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 source ~/.zshrc
+# Change the shell to zsh
+sudo chsh $USER -s $(which zsh)
 
 echo "All configurations are done!!! Enjoy it!"
