@@ -1,24 +1,19 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/home/chunliu/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting 
-	ssh-agent tmux nvm)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions
+	ssh-agent tmux nvm kubectl)
+
+autoload -U compinit && compinit
 
 ZSH_TMUX_AUTOSTART=true
 # Go-lang
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
+# Maven
+export PATH=$PATH:/opt/apache-maven-3.6.3/bin
 
 source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 source $ZSH/oh-my-zsh.sh
@@ -42,3 +37,6 @@ if [ "$TERM" != "linux" ]; then
 	install_powerline_precmd
 fi
 
+# Settings for colorls
+source $(dirname $(gem which colorls))/tab_complete.sh
+alias lc='colorls --sd'
