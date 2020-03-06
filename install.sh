@@ -67,8 +67,7 @@ echo "Create symbolic link for .vimrc"
 echo ""
 ln -s ~/.dotfiles/vimrc ~/.vimrc
 
-
-
+# Create symbolic link for .zshrc
 if [ -f ~/.zshrc ]; then
 	echo "Remove existing .zshrc..."
 	echo ""
