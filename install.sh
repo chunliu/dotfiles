@@ -72,8 +72,9 @@ if [ -f ~/.zshrc ]; then
 	echo ""
 	rm ~/.zshrc
 fi
-echo "${GREEN}Create symbolic link for .zshrc...${NC}"
+echo "${GREEN}Create symbolic link for .p10k.zsh .zshrc...${NC}"
 echo ""
+ln -s ~/.dotfiles/p10k.zsh ~/.p10k.zsh
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 # Change the shell to zsh
 echo "${GREEN}Change shell to zsh...${NC}"
