@@ -34,8 +34,10 @@ echo ""
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+echo "${GREEN}Install powerlevel10k...${NC}"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
-# Install go and powerline-go
+# Install go
 if [ -d /usr/local/go/ ]; then
 	echo "${GREEN}go is already installed...${NC}"
 	echo ""
@@ -44,13 +46,7 @@ else
 	echo ""
 	wget -O go1.14.linux-amd64.tar.gz https://dl.google.com/go/go1.14.linux-amd64.tar.gz
 	sudo tar -C /usr/local -xzf go1.14.linux-amd64.tar.gz
-	export PATH=$PATH:/usr/local/go/bin
-	export GOPATH=$HOME/go
 fi
-
-echo "${GREEN}Install powerline-go...${NC}"
-echo ""
-go get -u github.com/justjanne/powerline-go
 
 # Install and configure Colorls
 echo "${GREEN}Install colorls...${NC}"
@@ -79,9 +75,9 @@ fi
 echo "${GREEN}Create symbolic link for .zshrc...${NC}"
 echo ""
 ln -s ~/.dotfiles/zshrc ~/.zshrc
-# source ~/.zshrc
 # Change the shell to zsh
 echo "${GREEN}Change shell to zsh...${NC}"
 sudo chsh $USER -s $(which zsh)
 
-echo "${GREEN}All configurations are done!!! Good to go. Enjoy it!${NC}"
+echo "${GREEN}All configurations are done!!! Good to go.${NC}"
+echo "${GREEN}Logout and login again to see the difference.${NC}"

@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions
 	ssh-agent tmux nvm kubectl)
@@ -22,24 +22,6 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-# powerline-go
-function powerline_precmd() {
-	PS1="$($GOPATH/bin/powerline-go -error $? -shell zsh -modules 'venv,ssh,cwd,perms,git,hg,jobs,exit,root')"
-}
-
-function install_powerline_precmd() {
-	for s in "${precmd_functions[@]}"; do
-		if [ "$s" = "powerline_precmd" ]; then
-			return
-		fi
-	done
-	precmd_functions+=(powerline_precmd)
-}
-
-if [ "$TERM" != "linux" ]; then
-	install_powerline_precmd
-fi
-
 # Settings for colorls
 source $(dirname $(gem which colorls))/tab_complete.sh
 alias lc='colorls --sd'
