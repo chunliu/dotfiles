@@ -6,7 +6,7 @@ NC='\e[0m'
 # Update the package list and install zsh, tmux and vim
 echo "${GREEN}Install necessary packages...${NC}"
 sudo apt update
-sudo apt install zsh tmux vim build-essential ruby ruby-dev ruby-colorize -y
+sudo apt install zsh tmux vim -y
 
 # Create symbolic link for .tmux.conf
 if [ -f ~/.tmux.conf ]; then
@@ -48,10 +48,11 @@ else
 	sudo tar -C /usr/local -xzf go1.14.linux-amd64.tar.gz
 fi
 
-# Install and configure Colorls
-echo "${GREEN}Install colorls...${NC}"
+# Install and configure lsd
+echo "${GREEN}Install lsd...${NC}"
 echo ""
-sudo gem install colorls
+wget -O lsd_0.16.0_amd64.deb https://github.com/Peltoche/lsd/releases/download/0.16.0/lsd_0.16.0_amd64.deb
+sudo dpkg -i lsd_0.16.0_amd64.deb
 
 # Configure vim
 echo "${GREEN}Configure vim...${NC}"

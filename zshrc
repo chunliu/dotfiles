@@ -29,9 +29,7 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-# Settings for colorls
-source $(dirname $(gem which colorls))/tab_complete.sh
-alias lc='colorls --sd'
+alias lc=lsd
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
