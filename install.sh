@@ -44,14 +44,14 @@ if [ -d /usr/local/go/ ]; then
 else
 	echo "${GREEN}go is not found, now install it...${NC}"
 	echo ""
-	wget -O go1.14.linux-amd64.tar.gz https://dl.google.com/go/go1.14.linux-amd64.tar.gz
+	wget https://dl.google.com/go/go1.14.linux-amd64.tar.gz
 	sudo tar -C /usr/local -xzf go1.14.linux-amd64.tar.gz
 fi
 
 # Install and configure lsd
 echo "${GREEN}Install vivid and lsd...${NC}"
 echo ""
-wget "https://github.com/sharkdp/vivid/releases/download/v0.5.0/vivid_0.5.0_amd64.deb"
+wget https://github.com/sharkdp/vivid/releases/download/v0.5.0/vivid_0.5.0_amd64.deb
 sudo dpkg -i vivid_0.5.0_amd64.deb
 
 wget https://github.com/Peltoche/lsd/releases/download/0.16.0/lsd_0.16.0_amd64.deb
@@ -76,12 +76,20 @@ if [ -f ~/.zshrc ]; then
 	echo ""
 	rm ~/.zshrc
 fi
+
+if [ -f ~/.p10k.zsh ]; then
+	echo "${GREEN}Remove existing .p10k.zsh...${NC}"
+	echo ""
+	rm ~/.p10k.zsh
+fi
+
 echo "${GREEN}Create symbolic link for .p10k.zsh .zshrc...${NC}"
 echo ""
 ln -s ~/.dotfiles/p10k.zsh ~/.p10k.zsh
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 # Change the shell to zsh
 echo "${GREEN}Change shell to zsh...${NC}"
+echo ""
 sudo chsh $USER -s $(which zsh)
 
 echo "${GREEN}All configurations are done!!! Good to go.${NC}"
