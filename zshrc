@@ -29,9 +29,9 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-export LS_COLORS="$(vivid generate solarized-dark)"
-alias lc=lsd
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export LS_COLORS="$(vivid generate solarized-dark)"
+alias ls='lsd'
+
