@@ -7,6 +7,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+DISABLE_LS_COLORS="true"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -29,6 +30,7 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export LS_COLORS="$(vivid generate solarized-dark)"
 alias lc=lsd
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

@@ -49,9 +49,12 @@ else
 fi
 
 # Install and configure lsd
-echo "${GREEN}Install lsd...${NC}"
+echo "${GREEN}Install vivid and lsd...${NC}"
 echo ""
-wget -O lsd_0.16.0_amd64.deb https://github.com/Peltoche/lsd/releases/download/0.16.0/lsd_0.16.0_amd64.deb
+wget "https://github.com/sharkdp/vivid/releases/download/v0.5.0/vivid_0.5.0_amd64.deb"
+sudo dpkg -i vivid_0.5.0_amd64.deb
+
+wget https://github.com/Peltoche/lsd/releases/download/0.16.0/lsd_0.16.0_amd64.deb
 sudo dpkg -i lsd_0.16.0_amd64.deb
 
 # Configure vim
