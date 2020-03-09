@@ -7,7 +7,6 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-DISABLE_LS_COLORS="true"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -34,4 +33,4 @@ source $ZSH/oh-my-zsh.sh
 
 export LS_COLORS="$(vivid generate solarized-dark)"
 alias ls='lsd'
-
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
