@@ -11,6 +11,8 @@ set nobackup
 " function key timeout 
 set ttimeout 
 set ttimeoutlen=100
+" set pastetoggle
+set pastetoggle=<F2>
 
 "-------------------------------------
 " display settings
@@ -124,4 +126,3 @@ command! -nargs=1 LoadScript exec 'so '.s:home.'/'.'<args>'
 "exec 'set rtp+='.s:home
 "set rtp+=~/.vim
 LoadScript vim/init-plugins.vim
-LoadScript vim/paste-mode.vim
