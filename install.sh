@@ -6,7 +6,7 @@ NC='\e[0m'
 # Update the package list and install zsh, tmux and vim
 echo "${GREEN}Install necessary packages...${NC}"
 sudo apt update
-sudo apt install zsh tmux vim -y
+sudo apt install zsh tmux vim neofetch -y
 
 # Create symbolic link for .tmux.conf
 if [ -f ~/.tmux.conf ]; then

@@ -34,3 +34,5 @@ source $ZSH/oh-my-zsh.sh
 export LS_COLORS="$(vivid generate solarized-dark)"
 alias ls='lsd'
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
+
+neofetch
