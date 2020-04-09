@@ -54,8 +54,8 @@ echo ""
 wget https://github.com/sharkdp/vivid/releases/download/v0.5.0/vivid_0.5.0_amd64.deb
 sudo dpkg -i vivid_0.5.0_amd64.deb
 
-wget https://github.com/Peltoche/lsd/releases/download/0.16.0/lsd_0.16.0_amd64.deb
-sudo dpkg -i lsd_0.16.0_amd64.deb
+wget https://github.com/Peltoche/lsd/releases/download/0.17.0/lsd_0.17.0_amd64.deb
+sudo dpkg -i lsd_0.17.0_amd64.deb
 
 # Configure vim
 echo "${GREEN}Configure vim...${NC}"
