@@ -16,7 +16,7 @@ if [ -f ~/.tmux.conf ]; then
 fi 
 echo "${GREEN}Create symbolic link for .tmux.conf${NC}"
 echo ""
-ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+ln -s $PWD/tmux.conf ~/.tmux.conf
 
 # Install oh-my-zsh
 if [ -d ~/.oh-my-zsh/ ] ; then
@@ -37,25 +37,14 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 echo "${GREEN}Install powerlevel10k...${NC}"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
-# Install go
-if [ -d /usr/local/go/ ]; then
-	echo "${GREEN}go is already installed...${NC}"
-	echo ""
-else
-	echo "${GREEN}go is not found, now install it...${NC}"
-	echo ""
-	wget https://dl.google.com/go/go1.14.linux-amd64.tar.gz
-	sudo tar -C /usr/local -xzf go1.14.linux-amd64.tar.gz
-fi
-
 # Install and configure lsd
 echo "${GREEN}Install vivid and lsd...${NC}"
 echo ""
-wget https://github.com/sharkdp/vivid/releases/download/v0.5.0/vivid_0.5.0_amd64.deb
-sudo dpkg -i vivid_0.5.0_amd64.deb
+wget https://github.com/sharkdp/vivid/releases/download/v0.6.0/vivid_0.6.0_amd64.deb
+sudo dpkg -i vivid_0.6.0_amd64.deb
 
-wget https://github.com/Peltoche/lsd/releases/download/0.17.0/lsd_0.17.0_amd64.deb
-sudo dpkg -i lsd_0.17.0_amd64.deb
+wget https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_arm64.deb
+sudo dpkg -i lsd_0.20.1_amd64.deb
 
 # Configure vim
 echo "${GREEN}Configure vim...${NC}"
@@ -68,7 +57,7 @@ if [ -f ~/.vimrc ]; then
 fi
 echo "${GREEN}Create symbolic link for .vimrc${NC}"
 echo ""
-ln -s ~/.dotfiles/vimrc ~/.vimrc
+ln -s $PWD/vimrc ~/.vimrc
 
 # Create symbolic link for .zshrc
 if [ -f ~/.zshrc ]; then
@@ -85,8 +74,8 @@ fi
 
 echo "${GREEN}Create symbolic link for .p10k.zsh .zshrc...${NC}"
 echo ""
-ln -s ~/.dotfiles/p10k.zsh ~/.p10k.zsh
-ln -s ~/.dotfiles/zshrc ~/.zshrc
+ln -s $PWD/p10k.zsh ~/.p10k.zsh
+ln -s $PWD/zshrc ~/.zshrc
 # Change the shell to zsh
 echo "${GREEN}Change shell to zsh...${NC}"
 echo ""
