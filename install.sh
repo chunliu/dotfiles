@@ -43,7 +43,7 @@ echo ""
 wget https://github.com/sharkdp/vivid/releases/download/v0.6.0/vivid_0.6.0_amd64.deb
 sudo dpkg -i vivid_0.6.0_amd64.deb
 
-wget https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_arm64.deb
+wget https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb
 sudo dpkg -i lsd_0.20.1_amd64.deb
 
 # Configure vim
