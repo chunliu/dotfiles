@@ -16,7 +16,7 @@ if [ -f ~/.tmux.conf ]; then
 fi 
 echo "${GREEN}Create symbolic link for .tmux.conf${NC}"
 echo ""
-ln -s $PWD/tmux.conf ~/.tmux.conf
+ln -s $HOME/.dotfiles/tmux.conf ~/.tmux.conf
 
 # Install oh-my-zsh
 if [ -d ~/.oh-my-zsh/ ] ; then
@@ -57,7 +57,7 @@ if [ -f ~/.vimrc ]; then
 fi
 echo "${GREEN}Create symbolic link for .vimrc${NC}"
 echo ""
-ln -s $PWD/vimrc ~/.vimrc
+ln -s $HOME/.dotfiles/vimrc ~/.vimrc
 
 # Create symbolic link for .zshrc
 if [ -f ~/.zshrc ]; then
@@ -74,8 +74,8 @@ fi
 
 echo "${GREEN}Create symbolic link for .p10k.zsh .zshrc...${NC}"
 echo ""
-ln -s $PWD/p10k.zsh ~/.p10k.zsh
-ln -s $PWD/zshrc ~/.zshrc
+ln -s $HOME/.dotfiles/p10k.zsh ~/.p10k.zsh
+ln -s $HOME/.dotfiles/zshrc ~/.zshrc
 # Change the shell to zsh
 echo "${GREEN}Change shell to zsh...${NC}"
 echo ""
